@@ -69,7 +69,7 @@ const CERTIFICATES = [
 
 const ROLES = [
   'Software Engineer',
-  'AWS Solutions Architect',
+  'AWS Solutions Architect - Associate',
   'DevOps Engineer',
   'Cloud Engineer',
   'Backend Developer',
@@ -220,8 +220,8 @@ function App() {
               <span className="meta-text">Lahore, Pakistan</span>
               <span className="meta-text">FAST-NUCES '26</span>
               <span className="badge badge-aws">
-                <img src="/aws-logo.png" alt="AWS" className="aws-inline-logo" />
-                Certified SAA
+                {/* <img src="/logo.png" alt="AWS" className="aws-inline-logo" /> */}
+                AWS Certified SAA
               </span>
             </div>
           </Output>

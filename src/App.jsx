@@ -62,7 +62,7 @@ const CERTIFICATES = [
     issuer: 'Amazon Web Services',
     date: '2026',
     badge: '/aws-badge.png',
-    logo: '/logo.png',
+    // logo: 'logo.png',
     url: 'https://www.credly.com/badges/675465fc-7ac1-4fd4-85af-295c6c920bcc',
   },
 ];
@@ -338,8 +338,11 @@ function App() {
                   </div>
                   <div className="cert-info">
                     <span className="cert-name">{cert.name}</span>
-                    <div className="cert-issuer-row">
+                    {/* <div className="cert-issuer-row">
                       <img src={cert.logo} alt={cert.issuer} className="cert-issuer-logo" />
+                      <span className="cert-issuer">{cert.issuer}</span>
+                    </div> */}
+                    <div className="cert-issuer-row">
                       <span className="cert-issuer">{cert.issuer}</span>
                     </div>
                     <div className="cert-meta">

@@ -1,0 +1,116 @@
+/* ═══════════════════════════════════════════════════════════
+   CONTACT SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+/* ─── Message Side ─── */
+.contact-message {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.contact-ascii {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--green-400);
+  text-shadow: 0 0 8px var(--green-glow);
+  white-space: pre;
+  background: var(--term-bg);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--term-border);
+}
+
+.contact-text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* ─── Social Links ─── */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact-link-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 14px 18px;
+  background: var(--term-bg);
+  border: 1px solid var(--term-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.contact-link-card:hover {
+  border-color: var(--term-border-glow);
+  background: var(--term-surface-2);
+  transform: translateX(6px);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.05);
+}
+
+.link-icon {
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--term-surface-2);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.link-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.link-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.link-handle {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.link-arrow {
+  color: var(--text-dim);
+  font-size: 16px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.contact-link-card:hover .link-arrow {
+  transform: translateX(4px);
+  color: var(--green-400);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .contact-ascii {
+    font-size: 9px;
+    overflow-x: auto;
+  }
+}

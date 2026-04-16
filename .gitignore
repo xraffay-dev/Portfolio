@@ -1,0 +1,15 @@
+node_modules
+dist
+.DS_Store
+*.local
+.env
+.env.*
+*.log
+npm-debug.log*
+.vscode
+.idea
+*.swp
+*.swo
+*~
+Thumbs.db
+.gemini

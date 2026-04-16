@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════════════════════
+   BOOT SEQUENCE STYLES
+   ═══════════════════════════════════════════════════════════ */
+
+.boot-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--term-black);
+  z-index: var(--z-boot);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-2xl);
+  overflow: hidden;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.boot-screen.boot-exit {
+  opacity: 0;
+  transform: scale(1.02);
+  filter: brightness(2);
+}
+
+.boot-content {
+  max-width: 700px;
+  width: 100%;
+  padding-top: var(--space-xl);
+}
+
+.boot-header {
+  margin-bottom: var(--space-lg);
+}
+
+.boot-logo {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.1;
+  color: var(--green-400);
+  text-shadow: 0 0 10px var(--green-glow-strong), 0 0 30px var(--green-glow);
+  white-space: pre;
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.boot-lines {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.boot-line {
+  animation: slideIn 0.15s ease-out forwards;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.boot-line-system {
+  color: var(--text-secondary);
+}
+
+.boot-line-success {
+  color: var(--green-400);
+}
+
+.boot-line-info {
+  color: var(--cyan-400);
+  padding-left: 8px;
+}
+
+.boot-line-warning {
+  color: var(--amber-400);
+  text-shadow: 0 0 8px var(--amber-glow);
+}
+
+.boot-line-highlight {
+  color: var(--green-300);
+  font-weight: 600;
+  text-shadow: 0 0 10px var(--green-glow-strong);
+}
+
+.boot-line-progress {
+  color: var(--green-400);
+  letter-spacing: -1px;
+}
+
+.boot-line-blank {
+  height: 1.7em;
+}
+
+.boot-status {
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+.boot-status.ok {
+  color: var(--green-400);
+}
+
+.boot-status.warn {
+  color: var(--amber-400);
+}
+
+.boot-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 197, 94, 0.15),
+    rgba(34, 197, 94, 0.3),
+    rgba(34, 197, 94, 0.15),
+    transparent
+  );
+  animation: scanMove 2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanMove {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+  .boot-screen {
+    padding: var(--space-md);
+  }
+
+  .boot-logo {
+    font-size: 6px;
+  }
+
+  .boot-lines {
+    font-size: 11px;
+  }
+
+  .boot-content {
+    padding-top: var(--space-md);
+  }
+}

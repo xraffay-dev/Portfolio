@@ -1,0 +1,139 @@
+/* ═══════════════════════════════════════════════════════════
+   TERMINAL WINDOW COMPONENT
+   ═══════════════════════════════════════════════════════════ */
+
+.terminal-window {
+  background: var(--term-surface);
+  border: 1px solid var(--term-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+  box-shadow:
+    0 0 0 1px rgba(34, 197, 94, 0.03),
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(34, 197, 94, 0.02);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s var(--ease-out-expo) forwards;
+  opacity: 0;
+}
+
+.terminal-window:hover {
+  border-color: var(--term-border-glow);
+  box-shadow:
+    0 0 0 1px rgba(34, 197, 94, 0.06),
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(34, 197, 94, 0.04);
+}
+
+/* ─── Title Bar ─── */
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--term-surface-2);
+  border-bottom: 1px solid var(--term-border);
+  user-select: none;
+  gap: 12px;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.dot-red {
+  background: #ff5f57;
+  box-shadow: 0 0 6px rgba(255, 95, 87, 0.3);
+}
+.dot-yellow {
+  background: #febc2e;
+  box-shadow: 0 0 6px rgba(254, 188, 46, 0.3);
+}
+.dot-green {
+  background: #28c840;
+  box-shadow: 0 0 6px rgba(40, 200, 64, 0.3);
+}
+
+.terminal-title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.terminal-title-icon {
+  color: var(--green-500);
+  font-size: 10px;
+}
+
+.terminal-titlebar-right {
+  flex-shrink: 0;
+}
+
+.terminal-pid {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+}
+
+/* ─── Body ─── */
+.terminal-body {
+  padding: var(--space-lg);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.7;
+  position: relative;
+}
+
+/* ─── Variants ─── */
+.terminal-default .terminal-body {
+  /* default styling */
+}
+
+.terminal-accent .terminal-titlebar {
+  border-bottom-color: rgba(34, 197, 94, 0.15);
+}
+
+.terminal-accent .terminal-window {
+  border-color: rgba(34, 197, 94, 0.1);
+}
+
+.terminal-compact .terminal-body {
+  padding: var(--space-md);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+  .terminal-window {
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .terminal-body {
+    padding: var(--space-md);
+    font-size: 12px;
+  }
+
+  .terminal-titlebar {
+    padding: 8px 12px;
+  }
+
+  .terminal-pid {
+    display: none;
+  }
+}

@@ -1,0 +1,109 @@
+/* ═══════════════════════════════════════════════
+   MINIMAL TERMINAL PORTFOLIO — Design System
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* ── Background ── */
+  --page-bg: #1a1a2e;
+  --window-bg: #1c1c1e;
+  --titlebar-bg: #2c2c2e;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.1);
+
+  /* ── Accent ── */
+  --accent: #4ade80;
+  --accent-dim: #22c55e;
+  --accent-muted: rgba(74, 222, 128, 0.08);
+  --cyan: #67e8f9;
+  --amber: #fbbf24;
+  --rose: #fb7185;
+  --purple: #c084fc;
+
+  /* ── Text ── */
+  --text: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --text-dim: #3f3f46;
+
+  /* ── Fonts ── */
+  --mono: "JetBrains Mono", "Consolas", monospace;
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --content-max: 720px;
+  --section-gap: 80px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 var(--window-bg);
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--page-bg);
+  background-image:
+    radial-gradient(
+      ellipse at 20% 50%,
+      rgba(74, 222, 128, 0.03) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(99, 102, 241, 0.04) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 80%,
+      rgba(168, 85, 247, 0.03) 0%,
+      transparent 50%
+    );
+  min-height: 100vh;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 24px 60px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 3px;
+}
+
+::selection {
+  background: rgba(74, 222, 128, 0.2);
+  color: var(--accent);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+a:hover {
+  opacity: 0.8;
+}
+
+#root {
+  width: 100%;
+  max-width: 860px;
+}

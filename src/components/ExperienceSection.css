@@ -1,0 +1,180 @@
+/* ═══════════════════════════════════════════════════════════
+   EXPERIENCE SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.experience-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline-item {
+  display: flex;
+  gap: var(--space-lg);
+  position: relative;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 20px;
+  padding-top: 20px;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--green-500);
+  border: 2px solid var(--term-surface);
+  box-shadow: 0 0 10px var(--green-glow-strong), 0 0 20px var(--green-glow);
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(
+    180deg,
+    var(--green-600) 0%,
+    var(--term-border) 100%
+  );
+  margin-top: 4px;
+}
+
+.timeline-item:first-child .timeline-dot {
+  background: var(--green-400);
+  width: 14px;
+  height: 14px;
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* ─── Experience Card ─── */
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.exp-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exp-role {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.exp-company-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.exp-company {
+  font-size: 14px;
+  color: var(--cyan-400);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.exp-company:hover {
+  color: var(--cyan-300);
+  text-shadow: 0 0 8px var(--cyan-glow);
+}
+
+.exp-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.location-icon {
+  font-size: 10px;
+  color: var(--green-500);
+}
+
+.exp-period {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--amber-400);
+  background: var(--amber-glow);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─── Description ─── */
+.exp-description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-bullet {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.bullet-icon {
+  color: var(--green-500);
+  font-size: 12px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.bullet-text {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ─── Tech ─── */
+.exp-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: var(--space-sm);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .timeline-marker {
+    display: none;
+  }
+
+  .timeline-item {
+    gap: 0;
+  }
+
+  .exp-header {
+    flex-direction: column;
+  }
+
+  .exp-period {
+    align-self: flex-start;
+  }
+}

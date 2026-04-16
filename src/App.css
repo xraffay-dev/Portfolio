@@ -4,16 +4,15 @@
   border: 1px solid var(--border-strong);
   overflow: hidden;
   box-shadow:
-    0 25px 50px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.03),
-    0 0 80px rgba(0, 0, 0, 0.3);
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
 .titlebar {
   display: flex;
   align-items: center;
   padding: 0 16px;
-  height: 40px;
+  height: 42px;
   background: var(--titlebar-bg);
   border-bottom: 1px solid var(--border);
   user-select: none;
@@ -29,7 +28,6 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  transition: opacity 0.15s;
 }
 
 .light-red { background: #ff5f57; }
@@ -42,7 +40,6 @@
   font-family: var(--mono);
   font-size: 12px;
   color: var(--text-muted);
-  letter-spacing: 0.3px;
 }
 
 .titlebar-spacer {
@@ -50,10 +47,12 @@
   flex-shrink: 0;
 }
 
+/* Tabs */
+
 .tabbar {
   display: flex;
   padding: 0 12px;
-  background: rgba(44, 44, 46, 0.5);
+  background: rgba(30, 30, 40, 0.6);
   border-bottom: 1px solid var(--border);
   gap: 2px;
   overflow-x: auto;
@@ -68,9 +67,9 @@
   color: var(--text-muted);
   background: transparent;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 16px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s;
   white-space: nowrap;
   text-transform: lowercase;
   letter-spacing: 0.3px;
@@ -79,7 +78,6 @@
 
 .tab:hover {
   color: var(--text-secondary);
-  background: rgba(255, 255, 255, 0.03);
 }
 
 .tab-active {
@@ -94,8 +92,9 @@
   height: 2px;
   background: var(--accent);
   border-radius: 1px;
-  box-shadow: 0 0 6px rgba(74, 222, 128, 0.3);
 }
+
+/* Terminal Content */
 
 .terminal-body {
   padding: 32px 32px 24px;
@@ -103,12 +102,17 @@
   max-height: calc(100vh - 160px);
   overflow-y: auto;
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
+
+.terminal-body::-webkit-scrollbar { display: none; }
 
 .block {
   margin-bottom: 8px;
   scroll-margin-top: 24px;
 }
+
+/* Prompt */
 
 .prompt-line {
   font-family: var(--mono);
@@ -116,7 +120,7 @@
   display: flex;
   align-items: center;
   gap: 0;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   flex-wrap: wrap;
 }
 
@@ -138,7 +142,7 @@
 .divider {
   height: 1px;
   background: var(--border);
-  margin: 28px 0;
+  margin: 32px 0;
 }
 
 .typed { color: var(--text-secondary); }
@@ -165,7 +169,7 @@
 
 .hero-name {
   font-family: var(--sans);
-  font-size: 44px;
+  font-size: 46px;
   font-weight: 600;
   letter-spacing: -1.5px;
   color: var(--text);
@@ -175,16 +179,16 @@
 
 .hero-role {
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-secondary);
-  margin-bottom: 20px;
-  min-height: 22px;
+  margin-bottom: 22px;
+  min-height: 24px;
 }
 
 .hero-meta {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -194,14 +198,14 @@
   gap: 6px;
   font-family: var(--mono);
   font-size: 12px;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 20px;
 }
 
 .badge-green {
   background: rgba(74, 222, 128, 0.1);
   color: var(--accent);
-  border: 1px solid rgba(74, 222, 128, 0.15);
+  border: 1px solid rgba(74, 222, 128, 0.2);
 }
 
 .badge-dot {
@@ -224,9 +228,9 @@
 }
 
 .badge-aws {
-  background: rgba(255, 153, 0, 0.08);
-  color: #fbbf24;
-  border: 1px solid rgba(255, 153, 0, 0.15);
+  background: rgba(245, 158, 11, 0.08);
+  color: var(--amber);
+  border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
 .aws-inline-logo {
@@ -235,12 +239,12 @@
   object-fit: contain;
 }
 
-/* Body Text */
+/* About */
 
 .body-text {
   font-family: var(--sans);
   font-size: 14px;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 10px;
 }
@@ -282,7 +286,7 @@
 .skill-tag {
   font-family: var(--mono);
   font-size: 11px;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text-secondary);
@@ -309,7 +313,7 @@
   padding: 16px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(255, 255, 255, 0.02);
   text-decoration: none;
   transition: all 0.2s;
   display: flex;
@@ -319,7 +323,7 @@
 
 .project-card:hover {
   border-color: var(--border-strong);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.04);
   transform: translateY(-1px);
   opacity: 1;
 }
@@ -350,13 +354,13 @@
   background: rgba(74, 222, 128, 0.1);
   padding: 2px 8px;
   border-radius: 10px;
-  border: 1px solid rgba(74, 222, 128, 0.15);
+  border: 1px solid rgba(74, 222, 128, 0.2);
 }
 
 .project-desc {
   font-family: var(--sans);
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--text-muted);
 }
 
@@ -370,7 +374,7 @@
 .pill {
   font-family: var(--mono);
   font-size: 10px;
-  padding: 2px 8px;
+  padding: 3px 8px;
   border-radius: 4px;
   background: var(--accent-muted);
   color: var(--accent-dim);
@@ -386,7 +390,7 @@
 
 .exp-item {
   padding-left: 14px;
-  border-left: 2px solid var(--border);
+  border-left: 2px solid var(--border-strong);
   transition: border-color 0.3s;
 }
 
@@ -404,7 +408,7 @@
 
 .exp-role {
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text);
   margin: 0;
@@ -414,7 +418,7 @@
   font-family: var(--mono);
   font-size: 12px;
   color: var(--accent-dim);
-  margin-top: 2px;
+  margin-top: 3px;
   display: block;
 }
 
@@ -438,14 +442,14 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 
 .exp-bullets li {
   font-family: var(--sans);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.6;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   padding-left: 14px;
   position: relative;
 }
@@ -472,7 +476,7 @@
   padding: 10px 14px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(255, 255, 255, 0.02);
   text-decoration: none;
   transition: all 0.2s;
   gap: 12px;
@@ -480,7 +484,7 @@
 
 .social-row:hover {
   border-color: var(--border-strong);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.04);
   transform: translateX(3px);
   opacity: 1;
 }
@@ -526,14 +530,14 @@
   padding: 16px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(255, 255, 255, 0.02);
   text-decoration: none;
   transition: all 0.2s;
 }
 
 .cert-card:hover {
   border-color: var(--border-strong);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.04);
   transform: translateX(3px);
   opacity: 1;
 }
@@ -655,7 +659,7 @@
   }
 
   .hero-name {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .hero-meta {
